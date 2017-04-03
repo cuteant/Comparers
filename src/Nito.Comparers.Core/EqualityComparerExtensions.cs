@@ -4,14 +4,10 @@ using Nito.Comparers.Util;
 
 namespace Nito.Comparers
 {
-    /// <summary>
-    /// Provides extension methods for equality comparers.
-    /// </summary>
+    /// <summary>Provides extension methods for equality comparers.</summary>
     public static class EqualityComparerExtensions
     {
-        /// <summary>
-        /// Returns an equality comparer that uses another comparer if the source comparer determines the objects are equal.
-        /// </summary>
+        /// <summary>Returns an equality comparer that uses another comparer if the source comparer determines the objects are equal.</summary>
         /// <typeparam name="T">The type of objects being compared.</typeparam>
         /// <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
         /// <param name="thenBy">The comparer that is used if <paramref name="source"/> determines the objects are equal. If this is <c>null</c>, the default comparer is used.</param>
@@ -21,9 +17,7 @@ namespace Nito.Comparers
             return new CompoundEqualityComparer<T>(source, thenBy);
         }
 
-        /// <summary>
-        /// Returns an equality comparer that uses a key comparer if the source comparer determines the objects are equal.
-        /// </summary>
+        /// <summary>Returns an equality comparer that uses a key comparer if the source comparer determines the objects are equal.</summary>
         /// <typeparam name="T">The type of objects being compared.</typeparam>
         /// <typeparam name="TKey">The type of key objects being compared.</typeparam>
         /// <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
@@ -36,9 +30,7 @@ namespace Nito.Comparers
             return source.ThenEquateBy(keyComparer.SelectEquateFrom(selector, specialNullHandling));
         }
 
-        /// <summary>
-        /// Returns an equality comparer that will perform a lexicographical ordering on a sequence of items.
-        /// </summary>
+        /// <summary>Returns an equality comparer that will perform a lexicographical ordering on a sequence of items.</summary>
         /// <typeparam name="T">The type of sequence elements being compared.</typeparam>
         /// <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>
         /// <returns>A comparer that will perform a lexicographical ordering on a sequence of items.</returns>

@@ -1,3 +1,4 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("Comparer extensions for Interactive Extensions (Ix)")]
+[assembly: AssemblyTitle("Nito.Comparers.Ix")]
+[assembly: AssemblyDescription("Comparer extensions for Interactive Extensions (Ix)")]

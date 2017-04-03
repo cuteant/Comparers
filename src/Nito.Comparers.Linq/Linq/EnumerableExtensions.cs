@@ -4,14 +4,10 @@ using System.Linq;
 
 namespace Nito.Comparers.Linq
 {
-    /// <summary>
-    /// Extension methods for enumerable sequences.
-    /// </summary>
+    /// <summary>Extension methods for enumerable sequences.</summary>
     public static class EnumerableExtensions
     {
-        /// <summary>
-        /// Sorts the elements of a sequence in ascending order by using a specified comparer.
-        /// </summary>
+        /// <summary>Sorts the elements of a sequence in ascending order by using a specified comparer.</summary>
         /// <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
         /// <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
         /// <param name="source">A sequence of values to order.</param>
@@ -23,9 +19,7 @@ namespace Nito.Comparers.Linq
             return source.OrderBy(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Sorts the elements of a sequence in descending order by using a specified comparer.
-        /// </summary>
+        /// <summary>Sorts the elements of a sequence in descending order by using a specified comparer.</summary>
         /// <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
         /// <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
         /// <param name="source">A sequence of values to order.</param>
@@ -37,9 +31,7 @@ namespace Nito.Comparers.Linq
             return source.OrderByDescending(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Performs a subsequent ordering of the elements in a sequence in ascending order by using a specified comparer.
-        /// </summary>
+        /// <summary>Performs a subsequent ordering of the elements in a sequence in ascending order by using a specified comparer.</summary>
         /// <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
         /// <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
         /// <param name="source">A sequence of values to order.</param>
@@ -51,9 +43,7 @@ namespace Nito.Comparers.Linq
             return source.ThenBy(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Performs a subsequent ordering of the elements in a sequence in descending order by using a specified comparer.
-        /// </summary>
+        /// <summary>Performs a subsequent ordering of the elements in a sequence in descending order by using a specified comparer.</summary>
         /// <typeparam name="T">The type of the elements of <paramref name="source"/>.</typeparam>
         /// <typeparam name="TKey">The type of the key returned by <paramref name="keySelector"/>.</typeparam>
         /// <param name="source">A sequence of values to order.</param>
@@ -65,9 +55,7 @@ namespace Nito.Comparers.Linq
             return source.ThenByDescending(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Determines whether a sequence contains a specified element by using a specified equality comparer.
-        /// </summary>
+        /// <summary>Determines whether a sequence contains a specified element by using a specified equality comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
         /// <param name="source">A sequence in which to locate a value.</param>
         /// <param name="value">The value to locate in the sequence.</param>
@@ -78,9 +66,7 @@ namespace Nito.Comparers.Linq
             return source.Contains(value, comparer);
         }
 
-        /// <summary>
-        /// Returns distinct elements from a sequence by using a specified equality comparer to compare values.
-        /// </summary>
+        /// <summary>Returns distinct elements from a sequence by using a specified equality comparer to compare values.</summary>
         /// <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
         /// <param name="source">The sequence to remove duplicate elements from.</param>
         /// <param name="comparerFactory">The definition of a comparer to compare values.</param>
@@ -90,9 +76,7 @@ namespace Nito.Comparers.Linq
             return source.Distinct(comparer);
         }
 
-        /// <summary>
-        /// Produces the set difference of two sequences by using the specified equality comparer to compare values.
-        /// </summary>
+        /// <summary>Produces the set difference of two sequences by using the specified equality comparer to compare values.</summary>
         /// <typeparam name="TSource">The type of the elements of the sequences.</typeparam>
         /// <param name="first">A sequence whose elements that are not also in <paramref name="second"/> will be returned.</param>
         /// <param name="second">A sequence whose elements that also occur in the first sequence will cause those elements to be removed from the returned sequence.</param>
@@ -103,9 +87,7 @@ namespace Nito.Comparers.Linq
             return first.Except(second, comparer);
         }
 
-        /// <summary>
-        /// Groups the elements of a sequence according to a specified key selector function and compares the keys by using a specified equality comparer.
-        /// </summary>
+        /// <summary>Groups the elements of a sequence according to a specified key selector function and compares the keys by using a specified equality comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
         /// <typeparam name="TKey">The type of the key.</typeparam>
         /// <param name="source">A sequence whose elements are grouped.</param>
@@ -117,9 +99,7 @@ namespace Nito.Comparers.Linq
             return source.GroupBy(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Groups the elements of a sequence according to a key selector function. The keys are compared by using a comparer and each group's elements are projected by using a specified function.
-        /// </summary>
+        /// <summary>Groups the elements of a sequence according to a key selector function. The keys are compared by using a comparer and each group's elements are projected by using a specified function.</summary>
         /// <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
         /// <typeparam name="TKey">The type of the key.</typeparam>
         /// <typeparam name="TElement">The type of the elements in the grouping.</typeparam>
@@ -133,9 +113,7 @@ namespace Nito.Comparers.Linq
             return source.GroupBy(keySelector, elementSelector, comparer);
         }
 
-        /// <summary>
-        /// Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key. The keys are compared by using a specified comparer.
-        /// </summary>
+        /// <summary>Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key. The keys are compared by using a specified comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
         /// <typeparam name="TKey">The type of the key.</typeparam>
         /// <typeparam name="TResult">The type of the result values.</typeparam>
@@ -149,9 +127,7 @@ namespace Nito.Comparers.Linq
             return source.GroupBy(keySelector, resultSelector, comparer);
         }
 
-        /// <summary>
-        /// Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key. Key values are compared by using a specified comparer, and the elements of each group are projected by using a specified function.
-        /// </summary>
+        /// <summary>Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key. Key values are compared by using a specified comparer, and the elements of each group are projected by using a specified function.</summary>
         /// <typeparam name="TSource">The type of the elements of the sequence.</typeparam>
         /// <typeparam name="TKey">The type of the key.</typeparam>
         /// <typeparam name="TElement">The type of the elements in the grouping.</typeparam>
@@ -167,9 +143,7 @@ namespace Nito.Comparers.Linq
             return source.GroupBy(keySelector, elementSelector, resultSelector, comparer);
         }
 
-        /// <summary>
-        /// Correlates the elements of two sequences based on key equality and groups the results. A specified equality comparer is used to compare keys.
-        /// </summary>
+        /// <summary>Correlates the elements of two sequences based on key equality and groups the results. A specified equality comparer is used to compare keys.</summary>
         /// <typeparam name="TOuter">The type of the elements of the first sequence.</typeparam>
         /// <typeparam name="TInner">The type of the elements of the second sequence.</typeparam>
         /// <typeparam name="TKey">The type of the keys returned by the key selector functions.</typeparam>
@@ -186,9 +160,7 @@ namespace Nito.Comparers.Linq
             return outer.GroupJoin(inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
         }
 
-        /// <summary>
-        /// Produces the set intersection of two sequences by using the specified equality comparer to compare values.
-        /// </summary>
+        /// <summary>Produces the set intersection of two sequences by using the specified equality comparer to compare values.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
         /// <param name="first">A sequence whose distinct elements that also appear in <paramref name="second"/> will be returned.</param>
         /// <param name="second">A sequence whose distinct elements that also appear in the first sequence will be returned.</param>
@@ -199,9 +171,7 @@ namespace Nito.Comparers.Linq
             return first.Intersect(second, comparer);
         }
 
-        /// <summary>
-        /// Correlates the elements of two sequences based on matching keys. A specified equality comparer is used to compare keys.
-        /// </summary>
+        /// <summary>Correlates the elements of two sequences based on matching keys. A specified equality comparer is used to compare keys.</summary>
         /// <typeparam name="TOuter">The type of the elements of the first sequence.</typeparam>
         /// <typeparam name="TInner">The type of the elements of the second sequence.</typeparam>
         /// <typeparam name="TKey">The type of the keys returned by the key selector functions.</typeparam>
@@ -218,9 +188,7 @@ namespace Nito.Comparers.Linq
             return outer.Join(inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
         }
 
-        /// <summary>
-        /// Determines whether two sequences are equal by comparing their elements by using a specified equality comparer.
-        /// </summary>
+        /// <summary>Determines whether two sequences are equal by comparing their elements by using a specified equality comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
         /// <param name="first">A sequence to compare to <paramref name="second"/>.</param>
         /// <param name="second">A sequence to compare to the first sequence.</param>
@@ -231,9 +199,7 @@ namespace Nito.Comparers.Linq
             return first.SequenceEqual(second, comparer);
         }
 
-        /// <summary>
-        /// Creates a dictionary from a sequence according to a specified key selector function and key comparer.
-        /// </summary>
+        /// <summary>Creates a dictionary from a sequence according to a specified key selector function and key comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
         /// <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
         /// <param name="source">A sequence to create a dictionary from.</param>
@@ -245,9 +211,7 @@ namespace Nito.Comparers.Linq
             return source.ToDictionary(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Creates a dictionary from a sequence according to a specified key selector function, a comparer, and an element selector function.
-        /// </summary>
+        /// <summary>Creates a dictionary from a sequence according to a specified key selector function, a comparer, and an element selector function.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
         /// <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
         /// <typeparam name="TElement">The type of the elements returned by the element selector function.</typeparam>
@@ -261,9 +225,7 @@ namespace Nito.Comparers.Linq
             return source.ToDictionary(keySelector, elementSelector, comparer);
         }
 
-        /// <summary>
-        /// Creates a lookup from a sequence according to a specified key selector function and key comparer.
-        /// </summary>
+        /// <summary>Creates a lookup from a sequence according to a specified key selector function and key comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
         /// <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
         /// <param name="source">A sequence to create a lookup from.</param>
@@ -275,9 +237,7 @@ namespace Nito.Comparers.Linq
             return source.ToLookup(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Creates a lookup from a sequence according to a specified key selector function, a comparer, and an element selector function.
-        /// </summary>
+        /// <summary>Creates a lookup from a sequence according to a specified key selector function, a comparer, and an element selector function.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequence.</typeparam>
         /// <typeparam name="TKey">The type of the keys returned by the key selector function.</typeparam>
         /// <typeparam name="TElement">The type of the elements returned by the element selector function.</typeparam>
@@ -291,9 +251,7 @@ namespace Nito.Comparers.Linq
             return source.ToLookup(keySelector, elementSelector, comparer);
         }
 
-        /// <summary>
-        /// Produces the set union of two sequences by using a specified equality comparer.
-        /// </summary>
+        /// <summary>Produces the set union of two sequences by using a specified equality comparer.</summary>
         /// <typeparam name="TSource">The type of the elements of the input sequences.</typeparam>
         /// <param name="first">A sequence whose distinct elements form the first set for the union.</param>
         /// <param name="second">A sequence whose distinct elements form the second set for the union.</param>

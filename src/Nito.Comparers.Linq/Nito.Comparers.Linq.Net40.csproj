@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <AssemblyName>Nito.Comparers.Linq</AssemblyName>
+    <RootNamespace>Nito.Comparers</RootNamespace>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet">
+    <PackageId>Nito.Comparers.Linq.Unofficial</PackageId>
+    <Title>Nito.Comparers.Linq.Unofficial</Title>
+    <Description>Comparer extension methods for System.Linq.</Description>
+    <PackageTags>comparer;equalitycomparer;icomparable;iequatable</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="..\..\common\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
+    <Compile Include="..\..\common\versionInfo.cs" Link="Properties\versionInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nito.Comparers.Core\Nito.Comparers.Core.Net40.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,3 +1,4 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("Comparer extensions for Reactive Extensions (Rx)")]
+[assembly: AssemblyTitle("Nito.Comparers.Rx")]
+[assembly: AssemblyDescription("Comparer extensions for Reactive Extensions (Rx)")]

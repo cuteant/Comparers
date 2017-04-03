@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common\common.props" />
+  
+  <PropertyGroup>
+    <TargetFrameworks>net461;net451;net40;netstandard1.4</TargetFrameworks>
+    <PlatformTarget>anycpu</PlatformTarget>
+    <AssemblyName>Nito.Comparers.Core</AssemblyName>
+    <RootNamespace>Nito.Comparers</RootNamespace>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NuGet">
+    <PackageId>Nito.Comparers.Core.Unofficial</PackageId>
+    <Title>Nito.Comparers.Core.Unofficial</Title>
+    <Description>The last comparison library you'll ever need!</Description>
+    <PackageTags>comparer;equalitycomparer;icomparable;iequatable</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="..\..\common\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" />
+    <Compile Include="..\..\common\versionInfo.cs" Link="Properties\versionInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+    <PackageReference Include="CuteAnt.Extensions.Primitives">
+      <Version>2.0.0-rtm-170201</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>

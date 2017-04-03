@@ -3,14 +3,10 @@ using System.Collections.Generic;
 
 namespace Nito.Comparers.Util
 {
-    /// <summary>
-    /// Provides extension methods for comparers.
-    /// </summary>
+    /// <summary>Provides extension methods for comparers.</summary>
     internal static class UtilityComparerExtensions
     {
-        /// <summary>
-        /// Returns a comparer that works by comparing the results of the specified key selector.
-        /// </summary>
+        /// <summary>Returns a comparer that works by comparing the results of the specified key selector.</summary>
         /// <typeparam name="TSource">The type of key objects being compared.</typeparam>
         /// <typeparam name="T">The type of objects being compared.</typeparam>
         /// <param name="source">The source comparer. If this is <c>null</c>, the default comparer is used.</param>

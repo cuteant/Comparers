@@ -4,14 +4,10 @@ using System.Linq;
 
 namespace Nito.Comparers.Linq
 {
-    /// <summary>
-    /// Extension methods for enumerable sequences.
-    /// </summary>
+    /// <summary>Extension methods for enumerable sequences.</summary>
     public static class IxEnumerableExtensions
     {
-        /// <summary>
-        /// Returns the maximum value in the enumerable sequence by using the specified comparer to compare values.
-        /// </summary>
+        /// <summary>Returns the maximum value in the enumerable sequence by using the specified comparer to compare values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <param name="source">Source sequence.</param>
         /// <param name="comparerFactory">The definition of a comparer to compare elements.</param>
@@ -21,9 +17,7 @@ namespace Nito.Comparers.Linq
             return source.Max(comparer);
         }
 
-        /// <summary>
-        /// Returns the elements with the minimum key value by using the specified comparer to compare key values.
-        /// </summary>
+        /// <summary>Returns the elements with the minimum key value by using the specified comparer to compare key values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <typeparam name="TKey">Key type.</typeparam>
         /// <param name="source">Source sequence.</param>
@@ -35,9 +29,7 @@ namespace Nito.Comparers.Linq
             return source.MaxBy(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Returns the minimum value in the enumerable sequence by using the specified comparer to compare values.
-        /// </summary>
+        /// <summary>Returns the minimum value in the enumerable sequence by using the specified comparer to compare values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <param name="source">Source sequence.</param>
         /// <param name="comparerFactory">The definition of a comparer to compare elements.</param>
@@ -47,9 +39,7 @@ namespace Nito.Comparers.Linq
             return source.Min(comparer);
         }
 
-        /// <summary>
-        /// Returns the elements with the minimum key value by using the specified comparer to compare key values.
-        /// </summary>
+        /// <summary>Returns the elements with the minimum key value by using the specified comparer to compare key values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <typeparam name="TKey">Key type.</typeparam>
         /// <param name="source">Source sequence.</param>
@@ -61,9 +51,7 @@ namespace Nito.Comparers.Linq
             return source.MinBy(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Returns elements with a distinct key value by using the specified equality comparer to compare key values.
-        /// </summary>
+        /// <summary>Returns elements with a distinct key value by using the specified equality comparer to compare key values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <typeparam name="TKey">Key type.</typeparam>
         /// <param name="source">Source sequence.</param>
@@ -75,9 +63,7 @@ namespace Nito.Comparers.Linq
             return source.Distinct(keySelector, comparer);
         }
 
-        /// <summary>
-        /// Returns consecutive distinct elements by using the specified equality comparer to compare values.
-        /// </summary>
+        /// <summary>Returns consecutive distinct elements by using the specified equality comparer to compare values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <param name="source">Source sequence.</param>
         /// <param name="comparerFactory">The definition of a comparer to compare elements.</param>
@@ -87,9 +73,7 @@ namespace Nito.Comparers.Linq
             return source.DistinctUntilChanged(comparer);
         }
 
-        /// <summary>
-        /// Returns consecutive distinct elements based on a key value by using the specified equality comparer to compare key values.
-        /// </summary>
+        /// <summary>Returns consecutive distinct elements based on a key value by using the specified equality comparer to compare key values.</summary>
         /// <typeparam name="TSource">Source sequence element type.</typeparam>
         /// <typeparam name="TKey">Key type.</typeparam>
         /// <param name="source">Source sequence.</param>

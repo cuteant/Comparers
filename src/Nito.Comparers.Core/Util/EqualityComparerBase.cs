@@ -1,51 +1,37 @@
 ﻿namespace Nito.Comparers.Util
 {
-    /// <summary>
-    /// Common implementations for equality comparers.
-    /// </summary>
+    /// <summary>Common implementations for equality comparers.</summary>
     /// <typeparam name="T">The type of objects being compared.</typeparam>
     internal abstract class EqualityComparerBase<T> : IFullEqualityComparer<T>
     {
-        /// <summary>
-        /// A value indicating whether <c>null</c> values will be passed down to derived implementations.
-        /// </summary>
+        /// <summary>A value indicating whether <c>null</c> values will be passed down to derived implementations.</summary>
         private readonly bool _specialNullHandling;
 
-        /// <summary>
-        /// Gets a value indicating whether <c>null</c> values will be passed down to derived implementations.
-        /// </summary>
+        /// <summary>Gets a value indicating whether <c>null</c> values will be passed down to derived implementations.</summary>
         protected bool SpecialNullHandling
         {
             get { return _specialNullHandling; }
         }
 
-        /// <summary>
-        /// Returns a hash code for the specified object.
-        /// </summary>
+        /// <summary>Returns a hash code for the specified object.</summary>
         /// <param name="obj">The object for which to return a hash code.</param>
         /// <returns>A hash code for the specified object.</returns>
         protected abstract int DoGetHashCode(T obj);
 
-        /// <summary>
-        /// Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.
-        /// </summary>
+        /// <summary>Compares two objects and returns <c>true</c> if they are equal and <c>false</c> if they are not equal.</summary>
         /// <param name="x">The first object to compare.</param>
         /// <param name="y">The second object to compare.</param>
         /// <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise, <c>false</c>.</returns>
         protected abstract bool DoEquals(T x, T y);
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EqualityComparerBase{T}"/> class.
-        /// </summary>
+        /// <summary>Initializes a new instance of the <see cref="EqualityComparerBase{T}"/> class.</summary>
         /// <param name="specialNullHandling">A value indicating whether <c>null</c> values are passed to <see cref="DoGetHashCode"/> and <see cref="DoEquals"/>. If <c>false</c>, then <c>null</c> values are considered less than any non-<c>null</c> values and are not passed to <see cref="DoGetHashCode"/> nor <see cref="DoEquals"/>.</param>
         protected EqualityComparerBase(bool specialNullHandling)
         {
             _specialNullHandling = specialNullHandling;
         }
 
-        /// <summary>
-        /// Compares two objects and returns a value indicating whether they are equal.
-        /// </summary>
+        /// <summary>Compares two objects and returns a value indicating whether they are equal.</summary>
         /// <param name="x">The first object to compare.</param>
         /// <param name="y">The second object to compare.</param>
         /// <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise <c>false</c>.</returns>
@@ -60,9 +46,7 @@
             return DoEquals((T)x, (T)y);
         }
 
-        /// <summary>
-        /// Returns a hash code for the specified object.
-        /// </summary>
+        /// <summary>Returns a hash code for the specified object.</summary>
         /// <param name="obj">The object for which to return a hash code.</param>
         /// <returns>A hash code for the specified object.</returns>
         int System.Collections.IEqualityComparer.GetHashCode(object obj)
@@ -76,9 +60,7 @@
             return DoGetHashCode((T)obj);
         }
 
-        /// <summary>
-        /// Compares two objects and returns a value indicating whether they are equal.
-        /// </summary>
+        /// <summary>Compares two objects and returns a value indicating whether they are equal.</summary>
         /// <param name="x">The first object to compare.</param>
         /// <param name="y">The second object to compare.</param>
         /// <returns><c>true</c> if <paramref name="x"/> is equal to <paramref name="y"/>; otherwise <c>false</c>.</returns>
@@ -93,9 +75,7 @@
             return DoEquals(x, y);
         }
 
-        /// <summary>
-        /// Returns a hash code for the specified object.
-        /// </summary>
+        /// <summary>Returns a hash code for the specified object.</summary>
         /// <param name="obj">The object for which to return a hash code.</param>
         /// <returns>A hash code for the specified object.</returns>
         public int GetHashCode(T obj)
